@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router';
 import router from 'router';
+import GlobalStyles from 'styles/GlobalStyles';
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -19,7 +20,7 @@ root.render(
 	// <React.StrictMode>
 	<QueryClientProvider client={queryClient}>
 		<RouterProvider router={router} />
-		{/* <App /> */}
+		<GlobalStyles />
 		<ReactQueryDevtools initialIsOpen={false} />
 	</QueryClientProvider>,
 	// </React.StrictMode>,

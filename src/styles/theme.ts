@@ -1,3 +1,7 @@
+const color = {
+	rightGray: '#C4C4C4',
+};
+
 const size = {
 	mobile: '425px',
 	tablet: '768px',
@@ -9,3 +13,7 @@ const device = {
 	tablet: `@media only screen and (max-width: ${size.tablet})`,
 	desktopL: `@media only screen and (max-width: ${size.desktop})`,
 };
+
+const theme = { color, size, device };
+
+export default theme;

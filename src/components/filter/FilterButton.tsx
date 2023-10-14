@@ -10,7 +10,7 @@ const StyledFilterButton = styled.button`
 	display: flex;
 	align-items: center;
 	padding: 0.375rem 0.75rem;
-	border: 1px solid ${(props) => props.theme.color.rightGray};
+	border: 1px solid #c4c4c4;
 	border-radius: 1.875rem;
 	& + & {
 		margin-left: 0.5rem;

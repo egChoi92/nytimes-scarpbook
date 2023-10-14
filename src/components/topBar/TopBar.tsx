@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledTopBar = styled.div`
 	padding: 0.875rem 1.25rem;
-	border-bottom: 1px solid ${(props) => props.theme.color.rightGray};
+	border-bottom: 1px solid #c4c4c4;
 	background-color: #fff;
 `;
 

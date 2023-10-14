@@ -1,4 +1,5 @@
 import BottomBar from 'components/bottomBar/BottomBar';
+import FilterModal from 'components/filter/FilterModal';
 import TopBar from 'components/topBar/TopBar';
 import { Outlet } from 'react-router';
 import styled from 'styled-components';
@@ -18,6 +19,7 @@ export default function App() {
 				<Outlet />
 			</StyledAppContents>
 			<BottomBar />
+			<FilterModal />
 		</div>
 	);
 }

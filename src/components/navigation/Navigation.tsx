@@ -1,7 +1,7 @@
-import ImageHomeIconInactive from 'assets/images/icon/home_gray.svg';
-import ImageHomeIconActive from 'assets/images/icon/home_white.svg';
-import ImageScrapIconInactive from 'assets/images/icon/scrap_gray.svg';
-import ImageScrapIconActive from 'assets/images/icon/scrap_white.svg';
+import ImageHomeIconActive from 'assets/images/icon/home_active.svg';
+import ImageHomeIconInactive from 'assets/images/icon/home_inactive.svg';
+import ImageScrapIconActive from 'assets/images/icon/scrap_active.svg';
+import ImageScrapIconInactive from 'assets/images/icon/scrap_inactive.svg';
 import NavigationButton from 'components/navigation/NavigationButton';
 import styled from 'styled-components';
 

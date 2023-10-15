@@ -3,6 +3,7 @@ import FilterModal from 'components/filter/FilterModal';
 import TopBar from 'components/topBar/TopBar';
 import { Outlet } from 'react-router';
 import styled from 'styled-components';
+import { StyledSection } from 'styles/compoents';
 
 const StyledAppContents = styled.main`
 	display: flex;
@@ -16,9 +17,11 @@ export default function App() {
 			<StyledAppContents>
 				<h1 className="hidden">뉴욕 타임즈</h1>
 				<TopBar />
-				<Outlet />
+				<StyledSection>
+					<Outlet />
+				</StyledSection>
+				<BottomBar />
 			</StyledAppContents>
-			<BottomBar />
 			<FilterModal />
 		</div>
 	);

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 interface PropsType {
 	title: string;
-	organization: string;
+	organization: string | null;
 	name: string;
 	date: string;
 	link: string;
@@ -64,7 +64,7 @@ export default function Article({ title, organization, name, date, link, favorit
 			</StyledHead>
 			<StyledBody>
 				<StyledReporter>
-					<span>{organization}</span>
+					{organization && <span>{organization}</span>}
 					<span>{name}</span>
 				</StyledReporter>
 				<StyledDate>{date}</StyledDate>

@@ -10,8 +10,6 @@ export interface ArticleDocsType {
 	web_url: string;
 }
 export interface ArticleResponseType {
-	status: string;
-	response: {
-		docs: ArticleDocsType[];
-	};
+	pages: ArticleDocsType[];
+	pagesParmas: unknown[];
 }

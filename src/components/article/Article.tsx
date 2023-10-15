@@ -2,7 +2,7 @@ import ArticleFavoriteButton from 'components/article/ArticleFavoriteButton';
 import styled from 'styled-components';
 
 interface PropsType {
-	title: string;
+	headline: string;
 	organization: string | null;
 	name: string;
 	date: string;
@@ -55,11 +55,11 @@ const StyledDate = styled.p`
 	color: #6d6d6d;
 `;
 
-export default function Article({ title, organization, name, date, link, favorited }: PropsType) {
+export default function Article({ headline, organization, name, date, link, favorited }: PropsType) {
 	return (
 		<StyledArticle>
 			<StyledHead>
-				<StyledTitle href={link}>{title}</StyledTitle>
+				<StyledTitle href={link}>{headline}</StyledTitle>
 				<ArticleFavoriteButton favorited={favorited} />
 			</StyledHead>
 			<StyledBody>

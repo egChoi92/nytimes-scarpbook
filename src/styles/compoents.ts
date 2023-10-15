@@ -19,6 +19,7 @@ export const StyledFilterTitle = styled.p`
 	line-height: 1.5;
 	letter-spacing: -0.0313rem;
 `;
+
 export const StyledInput = styled.input`
 	width: 100%;
 	padding: 0.625rem 1.25rem;

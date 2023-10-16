@@ -1,7 +1,8 @@
-import FilterGlocations from 'components/filter/FilterGlocations';
 import FilterHeadline from 'components/filter/FilterHeadline';
+import FilterLocations from 'components/filter/FilterLocations';
 import FilterPubDate from 'components/filter/FilterPubDate';
-import { MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
+import { filterStore } from 'store/filter';
 import { modalStore } from 'store/modal';
 import styled from 'styled-components';
 
@@ -37,24 +38,36 @@ const StyledModalButton = styled.button`
 `;
 
 export default function FilterModal() {
-	const isShow = modalStore((state) => state.isShow);
-	const toggleModal = modalStore((state) => state.setIsShow);
+	const modalState = {
+		isShow: modalStore((state) => state.isShow),
+		toggleModal: modalStore((state) => state.setIsShow),
+	};
+	const filterState = {
+		filter: filterStore((state) => state.filter),
+		setFilter: filterStore((state) => state.setFilter),
+	};
+
+	const [filter, setFilter] = useState(filterState.filter);
 
 	const handleDimClick = (event: MouseEvent<HTMLDivElement>) => {
-		if (event.target === event.currentTarget) toggleModal(false);
+		if (event.target === event.currentTarget) modalState.toggleModal(false);
 	};
+
 	const handleFilterSubmit = () => {
-		toggleModal(false);
+		filterState.setFilter(filter);
+		modalState.toggleModal(false);
 	};
 
 	return (
-		isShow && (
+		modalState.isShow && (
 			<StyledModal onClick={(event) => handleDimClick(event)}>
 				<StyledModalWrapper>
-					<FilterHeadline />
-					<FilterPubDate />
-					<FilterGlocations />
-					<StyledModalButton onClick={handleFilterSubmit}>필터 적용하기</StyledModalButton>
+					<FilterHeadline defaultValue={filter.headline} setFilter={setFilter} />
+					<FilterPubDate defaultValue={filter.pub_date} setFilter={setFilter} />
+					<FilterLocations defaultValue={filter.glocations} setFilter={setFilter} />
+					<StyledModalButton type="button" onClick={handleFilterSubmit}>
+						필터 적용하기
+					</StyledModalButton>
 				</StyledModalWrapper>
 			</StyledModal>
 		)

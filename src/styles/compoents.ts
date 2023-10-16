@@ -6,6 +6,9 @@ export const StyledSection = styled.section`
 	padding: 2.667vw 2.667vw 3.2vw;
 	background-color: #f0f1f4;
 `;
+export const StyledArticleWrapper = styled.div`
+	min-height: 100%;
+`;
 
 export const StyledFilter = styled.div`
 	& + & {

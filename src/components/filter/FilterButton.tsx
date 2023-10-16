@@ -1,12 +1,6 @@
 import { modalStore } from 'store/modal';
 import styled from 'styled-components';
 
-interface PropsType {
-	id: string;
-	text: string;
-	iconSrc?: string;
-}
-
 const StyledFilterButton = styled.button`
 	display: flex;
 	align-items: center;
@@ -22,6 +16,10 @@ const StyledFilterButton = styled.button`
 	> img {
 		margin-right: 0.25rem;
 	}
+	&.is-active {
+		border-color: #82b0f4;
+		color: #3478f6;
+	}
 `;
 
 const StyledFilterButtonText = styled.p`
@@ -35,13 +33,19 @@ const StyledFilterButtonText = styled.p`
 	}
 `;
 
-export default function FilterButton({ id, text, iconSrc }: PropsType) {
+interface PropsType {
+	className: string;
+	text: string;
+	iconSrc?: string;
+}
+
+export default function FilterButton({ className, text, iconSrc }: PropsType) {
 	const toggleModal = modalStore((state) => state.setIsShow);
 	const handleFilterModalOpen = () => {
 		toggleModal(true);
 	};
 	return (
-		<StyledFilterButton className={`button-${id}`} onClick={handleFilterModalOpen}>
+		<StyledFilterButton className={className} onClick={handleFilterModalOpen}>
 			<img src={iconSrc} alt="" />
 			<StyledFilterButtonText>
 				<span>{text}</span>

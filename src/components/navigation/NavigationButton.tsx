@@ -2,17 +2,13 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import styled from 'styled-components';
 
-interface PropsType {
-	title: string;
-	link: string;
-	activeIconSrc: string;
-	inactiveIconSrc: string;
-}
-
-const StyledNavigationButton = styled.button<{ $isActive: boolean }>`
+const StyledNavigationButton = styled.button`
 	display: block;
 	text-align: center;
-	color: ${(props) => (props.$isActive ? ' #fff' : '#6d6d6d')};
+	color: #6d6d6d;
+	&.is-active {
+		color: #fff;
+	}
 	& > p {
 		margin-top: 0.5rem;
 		font-size: 0.625rem;
@@ -20,6 +16,13 @@ const StyledNavigationButton = styled.button<{ $isActive: boolean }>`
 		line-height: 1.2;
 	}
 `;
+
+interface PropsType {
+	title: string;
+	link: string;
+	activeIconSrc: string;
+	inactiveIconSrc: string;
+}
 
 export default function NavigationButton({ title, link, activeIconSrc, inactiveIconSrc }: PropsType) {
 	const navigate = useNavigate();
@@ -31,7 +34,11 @@ export default function NavigationButton({ title, link, activeIconSrc, inactiveI
 	}, [location.pathname, link]);
 
 	return (
-		<StyledNavigationButton $isActive={isActive} onClick={() => navigate(link)} title={`${title} 바로가기`}>
+		<StyledNavigationButton
+			className={`${isActive && 'is-active'}`}
+			onClick={() => navigate(link)}
+			title={`${title} 바로가기`}
+		>
 			<img src={isActive ? activeIconSrc : inactiveIconSrc} alt="" />
 			<p>{title}</p>
 		</StyledNavigationButton>

@@ -1,4 +1,6 @@
+import ImageIconCalendarActive from 'assets/images/icon/calendar_active.svg';
 import ImageIconCalendarInactive from 'assets/images/icon/calendar_inactive.svg';
+import ImageIconSearchActive from 'assets/images/icon/search_active.svg';
 import ImageIconSearchInactive from 'assets/images/icon/search_inactive.svg';
 import FilterButton from 'components/filter/FilterButton';
 import { locationDic } from 'constants/filter';
@@ -14,10 +16,11 @@ export default function FilterList() {
 	const filterState = {
 		filter: filterStore((state) => state.filter),
 	};
+	const { headline, pub_date, glocations } = filterState.filter;
 
 	const locationText = (() => {
-		const firstTitle = dictionary(filterState.filter.glocations[0], locationDic);
-		const locationCount = filterState.filter.glocations.length - 1;
+		const firstTitle = dictionary(glocations[0], locationDic);
+		const locationCount = glocations.length - 1;
 
 		if (firstTitle) {
 			return `${firstTitle} ${locationCount ? `외 ${locationCount}` : ''}`;
@@ -26,17 +29,17 @@ export default function FilterList() {
 
 	const filterButtonProps = [
 		{
-			id: 'headline',
-			text: filterState.filter.headline || '전체 헤드라인',
-			iconSrc: ImageIconSearchInactive,
+			className: `button-headline ${headline && 'is-active'}`,
+			text: headline || '전체 헤드라인',
+			iconSrc: headline ? ImageIconSearchActive : ImageIconSearchInactive,
 		},
 		{
-			id: 'search',
-			text: filterState.filter.pub_date || '전체 날짜',
-			iconSrc: ImageIconCalendarInactive,
+			className: `button-search ${pub_date && 'is-active'}`,
+			text: pub_date || '전체 날짜',
+			iconSrc: pub_date ? ImageIconCalendarActive : ImageIconCalendarInactive,
 		},
 		{
-			id: 'country',
+			className: `button-country ${locationText && 'is-active'}`,
 			text: locationText || '전체 국가',
 		},
 	];

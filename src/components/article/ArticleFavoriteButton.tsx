@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 interface PropsType {
-	favorited: boolean;
+	favored: boolean;
 }
 
 const StyledFavoriteButton = styled.button`
@@ -14,8 +14,8 @@ const StyledFavoriteButton = styled.button`
 	width: 1.5rem;
 	height: 1.5rem;
 `;
-export default function ArticleFavoriteButton({ favorited }: PropsType) {
-	const [isFavorite, setIsFavorite] = useState(favorited);
+export default function ArticleFavoriteButton({ favored }: PropsType) {
+	const [isFavorite, setIsFavorite] = useState(favored);
 
 	const handleFavoriteToggle = () => {
 		setIsFavorite(!isFavorite);

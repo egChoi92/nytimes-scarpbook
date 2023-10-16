@@ -1,6 +1,7 @@
 import FilterHeadline from 'components/filter/FilterHeadline';
 import FilterLocations from 'components/filter/FilterLocations';
 import FilterPubDate from 'components/filter/FilterPubDate';
+import { initialFilterState } from 'constants/filter';
 import { MouseEvent, useState } from 'react';
 import { filterStore } from 'store/filter';
 import { modalStore } from 'store/modal';
@@ -50,7 +51,10 @@ export default function FilterModal() {
 	const [filter, setFilter] = useState(filterState.filter);
 
 	const handleDimClick = (event: MouseEvent<HTMLDivElement>) => {
-		if (event.target === event.currentTarget) modalState.toggleModal(false);
+		if (event.target === event.currentTarget) {
+			setFilter(initialFilterState);
+			modalState.toggleModal(false);
+		}
 	};
 
 	const handleFilterSubmit = () => {
@@ -62,9 +66,9 @@ export default function FilterModal() {
 		modalState.isShow && (
 			<StyledModal onClick={(event) => handleDimClick(event)}>
 				<StyledModalWrapper>
-					<FilterHeadline defaultValue={filter.headline} setFilter={setFilter} />
-					<FilterPubDate defaultValue={filter.pub_date} setFilter={setFilter} />
-					<FilterLocations defaultValue={filter.glocations} setFilter={setFilter} />
+					<FilterHeadline defaultValue={filterState.filter.headline} setFilter={setFilter} />
+					<FilterPubDate defaultValue={filterState.filter.pub_date} setFilter={setFilter} />
+					<FilterLocations defaultValue={filterState.filter.glocations} setFilter={setFilter} />
 					<StyledModalButton type="button" onClick={handleFilterSubmit}>
 						필터 적용하기
 					</StyledModalButton>

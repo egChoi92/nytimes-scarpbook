@@ -9,7 +9,7 @@ export default function Scrap() {
 			name: '김정확 기자',
 			pub_date: '2023.10.14. (목)',
 			link: 'https://www.naver.com/',
-			favorited: false,
+			favored: false,
 		},
 	];
 	return (

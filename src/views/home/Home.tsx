@@ -5,6 +5,7 @@ import LoadingFrame from 'components/frame/LoadingFrame';
 import useObserver from 'hooks/useObserver';
 import { filterStore } from 'store/filter';
 import { StyledArticleWrapper } from 'styles/compoents';
+import { ArticleDocsType } from 'types/article';
 import { formatDateToYYYYMMDD } from 'utils/date';
 
 export default function Home() {
@@ -58,7 +59,7 @@ export default function Home() {
 		hasNextPage && fetchNextPage();
 	});
 
-	const articleDocs = data?.pages.map((docs) => {
+	const articleDocs = data?.pages.map((docs): ArticleDocsType => {
 		return {
 			headline: docs.headline.main,
 			organization: docs.byline.organization,

@@ -6,6 +6,7 @@ import { MouseEvent, useState } from 'react';
 import { filterStore } from 'store/filter';
 import { modalStore } from 'store/modal';
 import styled from 'styled-components';
+import { StyledSubmitButton } from 'styles/compoents';
 
 const StyledModal = styled.div`
 	display: flex;
@@ -24,18 +25,6 @@ const StyledModalWrapper = styled.div`
 	padding: 1.25rem;
 	border-radius: 1rem;
 	background-color: #fff;
-`;
-const StyledModalButton = styled.button`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 60px;
-	margin-top: 2.5rem;
-	border-radius: 1rem;
-	background-color: #3478f6;
-	color: #fff;
-	letter-spacing: -0.0313rem;
 `;
 
 export default function FilterModal() {
@@ -69,9 +58,9 @@ export default function FilterModal() {
 					<FilterHeadline defaultValue={filterState.filter.headline} setFilter={setFilter} />
 					<FilterPubDate defaultValue={filterState.filter.pub_date} setFilter={setFilter} />
 					<FilterLocations defaultValue={filterState.filter.glocations} setFilter={setFilter} />
-					<StyledModalButton type="button" onClick={handleFilterSubmit}>
+					<StyledSubmitButton type="button" onClick={handleFilterSubmit}>
 						필터 적용하기
-					</StyledModalButton>
+					</StyledSubmitButton>
 				</StyledModalWrapper>
 			</StyledModal>
 		)

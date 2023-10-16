@@ -1,8 +1,8 @@
-import FilterDate from 'components/filter/FilterDate';
+import FilterGlocations from 'components/filter/FilterGlocations';
 import FilterHeadline from 'components/filter/FilterHeadline';
-import FilterNation from 'components/filter/FilterNation';
+import FilterPubDate from 'components/filter/FilterPubDate';
 import { MouseEvent } from 'react';
-import { filterModalStore } from 'state/modal';
+import { modalStore } from 'store/modal';
 import styled from 'styled-components';
 
 const StyledModal = styled.div`
@@ -37,8 +37,9 @@ const StyledModalButton = styled.button`
 `;
 
 export default function FilterModal() {
-	const isShow = filterModalStore((state) => state.isShow);
-	const toggleModal = filterModalStore((state) => state.setIsShow);
+	const isShow = modalStore((state) => state.isShow);
+	const toggleModal = modalStore((state) => state.setIsShow);
+
 	const handleDimClick = (event: MouseEvent<HTMLDivElement>) => {
 		if (event.target === event.currentTarget) toggleModal(false);
 	};
@@ -51,8 +52,8 @@ export default function FilterModal() {
 			<StyledModal onClick={(event) => handleDimClick(event)}>
 				<StyledModalWrapper>
 					<FilterHeadline />
-					<FilterDate />
-					<FilterNation />
+					<FilterPubDate />
+					<FilterGlocations />
 					<StyledModalButton onClick={handleFilterSubmit}>필터 적용하기</StyledModalButton>
 				</StyledModalWrapper>
 			</StyledModal>

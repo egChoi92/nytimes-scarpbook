@@ -5,7 +5,7 @@ interface PropsType {
 	headline: string;
 	organization: string | null;
 	name: string;
-	date: string;
+	pub_date: string;
 	link: string;
 	favorited: boolean;
 }
@@ -55,7 +55,7 @@ const StyledDate = styled.p`
 	color: #6d6d6d;
 `;
 
-export default function Article({ headline, organization, name, date, link, favorited }: PropsType) {
+export default function Article({ headline, organization, name, pub_date, link, favorited }: PropsType) {
 	return (
 		<StyledArticle>
 			<StyledHead>
@@ -67,7 +67,7 @@ export default function Article({ headline, organization, name, date, link, favo
 					{organization && <span>{organization}</span>}
 					<span>{name}</span>
 				</StyledReporter>
-				<StyledDate>{date}</StyledDate>
+				<StyledDate>{pub_date}</StyledDate>
 			</StyledBody>
 		</StyledArticle>
 	);

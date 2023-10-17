@@ -1,4 +1,5 @@
 export interface ArticleDocsType {
+	[key: string]: string | string[] | boolean;
 	id: string;
 	headline: string;
 	organization: string;

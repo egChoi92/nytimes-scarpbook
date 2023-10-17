@@ -3,6 +3,7 @@ import axios from 'axios';
 import Article from 'components/article/Article';
 import LoadingFrame from 'components/frame/LoadingFrame';
 import useObserver from 'hooks/useObserver';
+import { useEffect } from 'react';
 import { scrapStore } from 'store/article';
 import { filterStore } from 'store/filter';
 import { StyledArticleWrapper } from 'styles/compoents';
@@ -31,7 +32,7 @@ export default function Home() {
 		}
 		return result;
 	})();
-	const { data, isLoading, isFetching, hasNextPage, fetchNextPage } = useInfiniteQuery({
+	const { data, isLoading, isFetching, hasNextPage, fetchNextPage, refetch } = useInfiniteQuery({
 		queryKey: ['articlesearch'],
 		queryFn: async ({ pageParam = 0 }) => {
 			const response = await axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
@@ -75,6 +76,9 @@ export default function Home() {
 		};
 	});
 
+	useEffect(() => {
+		refetch();
+	}, [filter]);
 	return (
 		<>
 			<h2 className="hidden">홈</h2>

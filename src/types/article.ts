@@ -1,4 +1,5 @@
 export interface ArticleDocsType {
+	id: string;
 	headline: string;
 	organization: string;
 	name: string;

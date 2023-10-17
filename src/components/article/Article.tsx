@@ -1,5 +1,6 @@
 import ArticleFavoriteButton from 'components/article/ArticleFavoriteButton';
 import styled from 'styled-components';
+import { ArticleDocsType } from 'types/article';
 
 const StyledArticle = styled.article`
 	padding: 0.625rem 1.25rem;
@@ -46,21 +47,14 @@ const StyledDate = styled.p`
 	color: #6d6d6d;
 `;
 
-interface PropsType {
-	headline: string;
-	organization: string | null;
-	name: string;
-	pub_date: string;
-	link: string;
-	favored: boolean;
-}
+export default function Article(props: ArticleDocsType) {
+	const { headline, organization, name, pub_date, link } = props;
 
-export default function Article({ headline, organization, name, pub_date, link, favored }: PropsType) {
 	return (
 		<StyledArticle>
 			<StyledHead>
 				<StyledTitle href={link}>{headline}</StyledTitle>
-				<ArticleFavoriteButton favored={favored} />
+				<ArticleFavoriteButton article={props} />
 			</StyledHead>
 			<StyledBody>
 				<StyledReporter>

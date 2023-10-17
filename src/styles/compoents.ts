@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledSection = styled.section`
 	flex: 1;
 	overflow: auto;
-	padding: 2.667vw 2.667vw 3.2vw;
+	padding: 1.25rem 1.25rem 1.5rem;
 	background-color: #f0f1f4;
 `;
 export const StyledArticleWrapper = styled.div`

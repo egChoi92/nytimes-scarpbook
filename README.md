@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# 뉴욕 타임즈 스크랩북
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href="https://nytimes-scarpbook.vercel.app/" target="_blank">※사이트 바로가기</a>
 
-## Available Scripts
+## 프로젝트 개요
+New York Times 의 API를 활용해 기사 리스트를 불러오고, 원하는 기사를 스크랩하고 검색 및 필터링 기능을 추가한 웹
 
-In the project directory, you can run:
+### 프로젝트 실행 방법
+```bash
+git clone https://github.com/egChoi92/nytimes-scarpbook.git
+cd nytimes-scarpbook
+npm install
+npm run start
+```   
 
-### `npm start`
+### 기술 스택
+#### Environment
+<div>
+<img src="https://img.shields.io/badge/vscode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"> <img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=white"> <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Development
+<div>
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img src="https://img.shields.io/badge/Zustand-48433D?style=for-the-badge&logo=zustand&logoColor=white"> <img src="https://img.shields.io/badge/React query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white">
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 폴더 구조
+```bash
+root
+ ┣📦src
+ ┃ ┣ 📂assets     에셋 폴더
+ ┃ ┣ 📂components 공통 컴포넌트 폴더
+ ┃ ┣ 📂constants  공통 상수 폴더
+ ┃ ┣ 📂hooks      커스텀훅 폴더
+ ┃ ┣ 📂router     라우터 폴더
+ ┃ ┣ 📂store      전역 상태 폴더
+ ┃ ┣ 📂styles     공통 CSS 폴더
+ ┃ ┣ 📂types      공통 타입 폴더
+ ┃ ┣ 📂utils      공통 함수 폴더
+ ┃ ┣ 📂views      페이지 컴포넌트 폴더
+ ┃ ┣ 📜App.js     
+ ┃ ┗ 📜index.js   
+```

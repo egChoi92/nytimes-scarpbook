@@ -5,7 +5,19 @@ interface ModalStoreType {
 	setIsShow: (isShow: boolean) => void;
 }
 
-export const modalStore = create<ModalStoreType>()((set) => ({
+interface AlertModalStoreType extends ModalStoreType {
+	text: string;
+	setText: (text: string) => void;
+}
+
+export const filterModalStore = create<ModalStoreType>()((set) => ({
 	isShow: false,
 	setIsShow: (isShow: boolean) => set({ isShow }),
+}));
+
+export const alertModalStore = create<AlertModalStoreType>()((set) => ({
+	isShow: false,
+	setIsShow: (isShow: boolean) => set({ isShow }),
+	text: '',
+	setText: (text: string) => set({ text }),
 }));

@@ -5,6 +5,8 @@ import { Outlet } from 'react-router';
 import styled from 'styled-components';
 import { StyledSection } from 'styles/compoents';
 
+import AlertModal from './components/modal/AlertModal';
+
 const StyledAppContents = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -14,6 +16,7 @@ const StyledAppContents = styled.main`
 export default function App() {
 	return (
 		<div className="app">
+			<AlertModal />
 			<StyledAppContents>
 				<h1 className="hidden">뉴욕 타임즈</h1>
 				<TopBar />

@@ -1,12 +1,9 @@
 import styled, { keyframes } from 'styled-components';
 
 const KeyframesRotate = keyframes`
-  0% {
-	width: 0;
-  }
-  100% {
-	width: 100%;
-  }
+	100% {
+	transform: rotate(360deg);
+	}
 `;
 const StyledLoading = styled.div`
 	display: flex;
@@ -18,34 +15,24 @@ const StyledLoading = styled.div`
 	transform: translate(-50%, -50%);
 `;
 const StyledLoadingBox = styled.div`
-	font-size: 0.875rem;
-	text-align: center;
-	color: #6d6d6d;
-`;
-
-const StyledLoadingBar = styled.div`
-	width: 100px;
-	height: 8px;
-	margin-top: 0.625rem;
-	border: 1px solid #6d6d6d;
-	border-radius: 4px;
-	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 `;
 const StyledLoadingIcon = styled.div`
-	height: 100%;
-	border-radius: 0 5px 5px 0;
-	background-color: #3478f6;
-	animation: ${KeyframesRotate} 2s infinite linear;
+	width: 50px;
+	height: 50px;
+	border: 0.5rem solid #3478f6;
+	border-top: 0.5rem solid #c4c4c4;
+	border-radius: 100%;
+	animation: ${KeyframesRotate} 1s infinite linear;
 `;
 
 export default function LoadingFrame() {
 	return (
 		<StyledLoading>
 			<StyledLoadingBox>
-				Loading...
-				<StyledLoadingBar>
-					<StyledLoadingIcon />
-				</StyledLoadingBar>
+				<StyledLoadingIcon />
 			</StyledLoadingBox>
 		</StyledLoading>
 	);

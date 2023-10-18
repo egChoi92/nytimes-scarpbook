@@ -10,6 +10,7 @@ import { dictionary } from 'utils/object';
 
 const StyledFilter = styled.div`
 	display: flex;
+	justify-content: center;
 `;
 
 export default function FilterList() {
@@ -35,7 +36,7 @@ export default function FilterList() {
 		},
 		{
 			className: `button-search ${pub_date && 'is-active'}`,
-			text: pub_date || '전체 날짜',
+			text: pub_date.replaceAll('-', '.') || '전체 날짜',
 			iconSrc: pub_date ? ImageIconCalendarActive : ImageIconCalendarInactive,
 		},
 		{

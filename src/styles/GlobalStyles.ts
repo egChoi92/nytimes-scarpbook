@@ -19,8 +19,7 @@ const GlobalStyles = createGlobalStyle`
         color: inherit;
         text-decoration: none;
         &:hover {
-            text-decoration: underline;
-            text-underline-position: under;
+            opacity: 0.7;
         }
     }
     .hidden {

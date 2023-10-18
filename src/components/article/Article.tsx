@@ -16,8 +16,7 @@ const StyledHead = styled.div`
 	justify-content: space-between;
 	align-items: baseline;
 `;
-const StyledTitle = styled.a`
-	flex: 1;
+const StyledLink = styled.a`
 	display: box;
 	display: -webkit-box;
 	overflow: hidden;
@@ -53,7 +52,7 @@ export default function Article(props: ArticleDocsType) {
 	return (
 		<StyledArticle>
 			<StyledHead>
-				<StyledTitle href={link}>{headline}</StyledTitle>
+				<StyledLink href={link}>{headline}</StyledLink>
 				<ArticleFavoriteButton article={props} />
 			</StyledHead>
 			<StyledBody>

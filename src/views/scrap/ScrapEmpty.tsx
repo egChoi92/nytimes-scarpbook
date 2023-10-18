@@ -8,7 +8,8 @@ const StyledScrapEmpty = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 78.66666666666666%;
+	width: 88.05970149253731%;
+	max-width: 295px;
 	height: 100%;
 	margin: auto;
 	text-align: center;

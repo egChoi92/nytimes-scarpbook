@@ -1,4 +1,4 @@
-import { modalStore } from 'store/modal';
+import { filterModalStore } from 'store/modal';
 import styled from 'styled-components';
 
 const StyledFilterButton = styled.button`
@@ -40,7 +40,7 @@ interface PropsType {
 }
 
 export default function FilterButton({ className, text, iconSrc }: PropsType) {
-	const toggleModal = modalStore((state) => state.setIsShow);
+	const toggleModal = filterModalStore((state) => state.setIsShow);
 	const handleFilterModalOpen = () => {
 		toggleModal(true);
 	};

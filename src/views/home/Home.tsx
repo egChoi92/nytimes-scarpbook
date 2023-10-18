@@ -72,7 +72,7 @@ export default function Home() {
 			pub_date: formatDateToYYYYMMDD(docs.pub_date),
 			link: docs.web_url,
 			glocations: filter.glocations,
-			favored: scrapState.article.find((item) => item.id === docs._id) ? true : false,
+			isFavored: scrapState.article.find((item) => item.id === docs._id) ? true : false,
 		};
 	});
 

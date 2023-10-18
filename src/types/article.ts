@@ -7,5 +7,5 @@ export interface ArticleDocsType {
 	pub_date: string;
 	link: string;
 	glocations: string[];
-	favored: boolean;
+	isFavored: boolean;
 }

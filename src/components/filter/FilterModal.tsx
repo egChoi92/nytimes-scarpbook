@@ -4,7 +4,7 @@ import FilterPubDate from 'components/filter/FilterPubDate';
 import { initialFilterState } from 'constants/filter';
 import { MouseEvent, useState } from 'react';
 import { filterStore } from 'store/filter';
-import { modalStore } from 'store/modal';
+import { filterModalStore } from 'store/modal';
 import styled from 'styled-components';
 import { StyledSubmitButton } from 'styles/compoents';
 
@@ -29,8 +29,8 @@ const StyledModalWrapper = styled.div`
 
 export default function FilterModal() {
 	const modalState = {
-		isShow: modalStore((state) => state.isShow),
-		toggleModal: modalStore((state) => state.setIsShow),
+		isShow: filterModalStore((state) => state.isShow),
+		toggleModal: filterModalStore((state) => state.setIsShow),
 	};
 	const filterState = {
 		filter: filterStore((state) => state.filter),
